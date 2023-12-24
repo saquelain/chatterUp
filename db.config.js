@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import mongoose from 'mongoose';
 
-const baseUrl = '127.0.0.1:27017';
+const baseUrl = '127.0.0.1';
 
 export const connectToDatabase = async () => {
     try {
