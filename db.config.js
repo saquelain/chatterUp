@@ -9,6 +9,7 @@ export const connectToDatabase = async () => {
         await mongoose.connect(`mongodb://${baseUrl}/Chatterup`, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
+            family: 4
         });
         console.log("MongoDB connected using mongoose");
     } catch (err) {
