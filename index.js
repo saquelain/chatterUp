@@ -3,6 +3,8 @@ import http from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
 import { connectToDatabase } from './db.config.js';
+import { chatModel } from './message.schema.js';
+import { userModel } from './user.schema.js';
 
 export const app = express();
 app.use(cors());
