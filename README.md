@@ -58,6 +58,40 @@ $ node index.js
 
 # The server will initialize in the <http://localhost:3000>
 ```
+
+  .
+  ├── public
+  └── public
+      ├── app
+      │   ├── core
+      │   ├── data
+      │   ├── layout
+      │   ├── module
+      │   └── shared
+      └── styles
+      
+  ├── public
+  │       ├ css
+  │           ├ style.css
+  │           ├ style.min.css
+  │       ├ profile
+  │             ├ <!--all profile images--!>
+  │       ├ admin.jpg
+  │       ├ chat.html
+  │       ├ chat.js
+  │       ├ index.html
+  │       ├ notification.mp3
+  │
+  │── .env
+  │── .gitignore
+  │── README.md
+  │── db.config.js
+  │── index.js
+  │── messages.schema.js
+  │── package.lock.json
+  │── package.json
+  └── user.schema.js
+  
 &#xa0;
 
 <a href="#top">Back to top</a>
