@@ -6,7 +6,7 @@ https://github.com/saquelain/chatterUp/assets/54945131/9792c645-a315-4706-887b-6
 
 <p>This real-time chat application is built using Node.js and utilizes MongoDB with Mongoose schemas for data storage. It enables users to engage in real-time conversations, share locations, and create/join specific rooms for discussions.</p>
 
-## :dart: Features ##
+## :star2: Features ##
 
 <ul>
   <li><strong>Real-Time Communication:</strong> Utilizes WebSockets to facilitate instant messaging among users.</li>
@@ -16,3 +16,17 @@ https://github.com/saquelain/chatterUp/assets/54945131/9792c645-a315-4706-887b-6
   <li><strong>Location Sharing:</strong> Allows users to share their current location with others.</li>
   <li><strong>Room Joining:</strong> Enables users to join specific rooms for conversations.</li>
 </ul>
+
+## 🚀: Technologies Used ##
+
+<a href="https://nodejs.org">
+  <img width="50" title="NodeJs" alt="NodeJS Logo" src="https://static-00.iconduck.com/assets.00/node-js-icon-227x256-913nazt0.png">
+</a> &#xa0; &#xa0;
+
+<a href="#">
+  <img width="50" title="Javascript" alt="Javascript Logo" src="">
+</a> &#xa0; &#xa0;
+
+<a href="https://www.mongodb.com/">
+  <img width="50" title="MongdoDB" alt="Mongo Logo" src="">
+</a> &#xa0; &#xa0;
