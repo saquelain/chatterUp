@@ -19,7 +19,7 @@ https://github.com/saquelain/chatterUp/assets/54945131/9792c645-a315-4706-887b-6
 
 ## 🚀: Technologies Used ##
 
-<div style="display: flex; justify-content: space-between;">
+<div align="center">
   <a href="https://nodejs.org">
     <img width="50" title="NodeJs" alt="NodeJS Logo" src="https://static-00.iconduck.com/assets.00/node-js-icon-227x256-913nazt0.png">
   </a> &#xa0; &#xa0;
