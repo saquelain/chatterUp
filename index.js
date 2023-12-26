@@ -76,13 +76,14 @@ io.on("connection", (socket) => {
         const allUsers = await userModel.find({room: room});
         var allMessages = await chatModel.find({room: room})
             .sort({ timestamp: -1 })
-            .limit(20); // Limit the number of messages to 10
+            .limit(40); // Limit the number of messages to 40
         allMessages = allMessages.reverse();
         io.to(room).emit('roomData', {
             room: room,
-            users: allUsers,
-            messages: allMessages
-        })
+            users: allUsers
+        });
+
+        socket.emit('updateMessages', allMessages);
     
         callback();
     });
@@ -102,13 +103,9 @@ io.on("connection", (socket) => {
 
     socket.on("loadMessages", async (message, callback) => {
         const {text, username, room, timestamp} = message;
-        // const filter = new Filter();
-    
-        // if (filter.isProfane(message)) {
-        //   return callback("Profanity is not allowed!");
-        // }
+
         const newMessage = new chatModel({username: username, text: text, room: room, timestamp: timestamp});
-        io.to(room).emit("message", newMessage);
+        socket.emit("message", newMessage);
         callback();
     });
 
@@ -131,7 +128,6 @@ io.on("connection", (socket) => {
     })
 
     socket.on("disconnect", async () => {
-        console.log("Connection disconnected.");
         // Access the room and username information from the socket
         const room = socket.room;
         const username = socket.username;
@@ -143,7 +139,7 @@ io.on("connection", (socket) => {
             io.to(room).emit("message", newMessage);
             const allUsers = await userModel.find({room: room});
             io.to(room).emit('updateOnlineUsers', {room: room, users: allUsers});
-            console.log(`${username} from ${room} is deleted`);
+            console.log(`${username} from ${room} is disconnected`);
         }
     });
 });

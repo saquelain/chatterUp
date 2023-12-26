@@ -121,9 +121,24 @@ socket.on('updateOnlineUsers', ({room, users}) => {
         userElement.appendChild(userName);
         sidebar.appendChild(userElement);
     });
+});
+
+socket.on('updateMessages', (messages) => {
+    messages.forEach((message) => {
+        socket.emit('loadMessages', {text: message.text, username: message.username, room: message.room, timestamp: message.timestamp}, (error) => {
+            //enable the form
+            // $messageFormButton.removeAttribute('disabled')
+            // $messageFormInput.value = ''
+
+            if (error) {
+                return console.log(`error in loading messages`, error);
+            }
+        });
+    });
+    $messageFormInput.focus()
 })
 
-socket.on('roomData', ({room, users, messages}) => {
+socket.on('roomData', ({room, users}) => {
     // const html = Mustache.render(sidebarTemplate, {
     //     room, 
     //     users
@@ -150,19 +165,6 @@ socket.on('roomData', ({room, users, messages}) => {
         userElement.appendChild(userName);
         sidebar.appendChild(userElement);
     });
-
-    messages.forEach((message) => {
-        socket.emit('loadMessages', {text: message.text, username: message.username, room: message.room, timestamp: message.timestamp}, (error) => {
-            //enable the form
-            // $messageFormButton.removeAttribute('disabled')
-            // $messageFormInput.value = ''
-            
-            if (error) {
-                return console.log(`error in loading messages`, error);
-            }
-        });
-    });
-    $messageFormInput.focus()
 
     autoscroll()
 })
