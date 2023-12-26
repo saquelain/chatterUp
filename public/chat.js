@@ -78,8 +78,10 @@ socket.on("nottyping...", (user) => {
 })
 
 socket.on('notification', ({username, text}) => {
-    alert(`${username} has sent a message`);
     // add notification sound
+    var audio = new Audio('notification.mp3');
+    audio.play();
+    alert(`${username} has sent a message`);
 })
 
 socket.on('message', (message) => {
