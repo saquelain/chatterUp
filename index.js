@@ -98,6 +98,7 @@ io.on("connection", (socket) => {
         const newMessage = new chatModel({username: username, text: text, room: room, timestamp: new Date().getTime()});
         await newMessage.save();
         io.to(room).emit("message", newMessage);
+        socket.broadcast.to(room).emit("notification", {username, text});
         callback();
     });
 

@@ -77,6 +77,11 @@ socket.on("nottyping...", (user) => {
     typingInfo.remove();
 })
 
+socket.on('notification', ({username, text}) => {
+    alert(`${username} has sent a message`);
+    // add notification sound
+})
+
 socket.on('message', (message) => {
     console.log(message)
     const html = Mustache.render(messageTemplate, {
