@@ -7,6 +7,10 @@ const messageSchema = new mongoose.Schema({
     text: String,
     room: String,
     timestamp: Date,
+    avatar: {
+        type: String,
+        default: 'admin.jpg'
+    }
 });
 
 

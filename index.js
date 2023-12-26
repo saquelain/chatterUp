@@ -89,13 +89,13 @@ io.on("connection", (socket) => {
     });
 
     socket.on("sendMessage", async (message, callback) => {
-        const {text, username, room} = message;
+        const {text, username, room, avatar} = message;
         const filter = new Filter();
     
         if (filter.isProfane(text)) {
           return callback("Profanity is not allowed!");
         }
-        const newMessage = new chatModel({username: username, text: text, room: room, timestamp: new Date().getTime()});
+        const newMessage = new chatModel({username: username, text: text, room: room, timestamp: new Date().getTime(), avatar});
         await newMessage.save();
         io.to(room).emit("message", newMessage);
         socket.broadcast.to(room).emit("notification", {username, text});
@@ -103,17 +103,17 @@ io.on("connection", (socket) => {
     });
 
     socket.on("loadMessages", async (message, callback) => {
-        const {text, username, room, timestamp} = message;
+        const {text, username, room, timestamp, avatar} = message;
 
-        const newMessage = new chatModel({username: username, text: text, room: room, timestamp: timestamp});
+        const newMessage = new chatModel({username: username, text: text, room: room, timestamp: timestamp, avatar});
         socket.emit("message", newMessage);
         callback();
     });
 
     socket.on("sendLocation", async (coords, callback) => {
-        const {username, room} = coords;
+        const {username, room, avatar} = coords;
         
-        const newMessage = new chatModel({username: username, text: `http://google.com/maps?q=${coords.latitute},${coords.longitute}`, room: room, timestamp: new Date().getTime()});
+        const newMessage = new chatModel({username: username, text: `http://google.com/maps?q=${coords.latitute},${coords.longitute}`, room: room, timestamp: new Date().getTime(), avatar});
         await newMessage.save();
         
         io.to(room).emit("locationMessage", newMessage);
@@ -136,7 +136,7 @@ io.on("connection", (socket) => {
         // Remove the user from the userModel when disconnected
         if (room && username) {
             await userModel.deleteOne({ username, room });
-            const newMessage = new chatModel({username: username, text: `${username} has left!`, room: room, timestamp: new Date().getTime()});
+            const newMessage = new chatModel({username: "Admin", text: `${username} has left!`, room: room, timestamp: new Date().getTime()});
             io.to(room).emit("message", newMessage);
             const allUsers = await userModel.find({room: room});
             io.to(room).emit('updateOnlineUsers', {room: room, users: allUsers});

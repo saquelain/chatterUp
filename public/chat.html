@@ -25,21 +25,33 @@
 
     <script id="message-template" type="text/html">
         <div class="message">
-            <p>
-                <span class="message__name">{{username}}</span>
-                <span class="message__meta">{{createdAt}}</span>
-            </p>
-            <p>{{ message }}</p>
+            <div class="profile-picture">
+                <img src="{{avatar}}" alt="" class="profille-picture">
+            </div>
+
+            <div class="message-content">
+                <p>
+                    <span class="message__name">{{username}}</span>
+                    <span class="message__meta">{{createdAt}}</span>
+                </p>
+                <p>{{ message }}</p>
+            </div>
         </div>
     </script>
 
     <script id="location-message-template" type="text/html">
         <div class="message">
-            <p>
-                <span class="message__name">{{username}}</span>
-                <span class="message__meta">{{createdAt}}</span>
-            </p>
-            <p><a href="{{url}}" target="_blank">My current location</a></p>
+            <div class="profile-picture">
+                <img src="{{avatar}}" alt="" class="profille-picture">
+            </div>
+
+            <div class="location-message-content">
+                <p>
+                    <span class="message__name">{{username}}</span>
+                    <span class="message__meta">{{createdAt}}</span>
+                </p>
+                <p><a href="{{url}}" target="_blank">My current location</a></p>
+            </div>
         </div>
     </script>
 

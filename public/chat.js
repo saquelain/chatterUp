@@ -2,6 +2,13 @@ const socket = io()
 var typing = false;
 var timeout = undefined;
 
+function getRandomDP() {
+    const index = Math.floor(Math.random() * 20) + 1;
+    return `./profile/${index}.jpg`;
+  }
+var userAvatar = getRandomDP();
+
+
 const { username, room } = Qs.parse(location.search, { ignoreQueryPrefix: true })
 
 // Elements
@@ -89,7 +96,8 @@ socket.on('message', (message) => {
     const html = Mustache.render(messageTemplate, {
         username: message.username,
         message: message.text,
-        createdAt: moment(message.timestamp).format('h:mm a')
+        createdAt: moment(message.timestamp).format('h:mm a'),
+        avatar: message.avatar
     })
     $messages.insertAdjacentHTML('beforeend', html)
     autoscroll()
@@ -100,7 +108,8 @@ socket.on('locationMessage', (message) => {
     const html = Mustache.render(locationMessageTemplate, {
         username: message.username,
         url: message.text,
-        createdAt: moment(message.timestamp).format('h:m a')
+        createdAt: moment(message.timestamp).format('h:m a'),
+        avatar: message.avatar
     })
     $messages.insertAdjacentHTML('beforeend', html)
     autoscroll()
@@ -132,7 +141,7 @@ socket.on('updateOnlineUsers', ({room, users}) => {
 
 socket.on('updateMessages', (messages) => {
     messages.forEach((message) => {
-        socket.emit('loadMessages', {text: message.text, username: message.username, room: message.room, timestamp: message.timestamp}, (error) => {
+        socket.emit('loadMessages', {text: message.text, username: message.username, room: message.room, timestamp: message.timestamp, avatar: message.avatar}, (error) => {
             //enable the form
             // $messageFormButton.removeAttribute('disabled')
             // $messageFormInput.value = ''
@@ -183,7 +192,7 @@ $messageForm.addEventListener('submit', (e) => {
 
     const message = e.target.message.value
 
-    socket.emit('sendMessage', {text: message, username, room}, (error) => {
+    socket.emit('sendMessage', {text: message, username, room, avatar: userAvatar}, (error) => {
         //enable the form
         $messageFormButton.removeAttribute('disabled')
         $messageFormInput.value = ''
@@ -207,7 +216,8 @@ $sendLocationButton.addEventListener('click', () => {
         socket.emit('sendLocation', {
             username, room,
             latitute: position.coords.latitude,
-            longitute: position.coords.longitude
+            longitute: position.coords.longitude,
+            avatar: userAvatar
         }, () => {
             $sendLocationButton.removeAttribute('disabled')
             console.log('Location Shared!')

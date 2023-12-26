@@ -139,10 +139,18 @@ button:disabled {
     font-size: small;
 }
 
+.profille-picture{
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
 /* Message Styles */
 
 .message {
     margin-bottom: 16px;   
+    display: flex;
 }
 
 .message__name {
