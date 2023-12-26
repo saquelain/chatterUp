@@ -17,7 +17,7 @@ https://github.com/saquelain/chatterUp/assets/54945131/9792c645-a315-4706-887b-6
   <li><strong>Room Joining:</strong> Enables users to join specific rooms for conversations.</li>
 </ul>
 
-## 🚀: Technologies Used ##
+## :rocket: Technologies Used ##
 
 <div align="center">
   <a href="https://nodejs.org">
@@ -37,4 +37,28 @@ https://github.com/saquelain/chatterUp/assets/54945131/9792c645-a315-4706-887b-6
   </a> &#xa0; &#xa0;
 </div>
 
+## :heavy_check_mark: Requirements ##
 
+<div>
+  Before starting :checkered_flag:, make sure you have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed on your system. ([npm](https://www.npmjs.com/) recommended).
+</div>
+
+## :checkered_flag: Starting ##
+
+```bash
+# Clone this project
+$ git clone https://github.com/saquelain/chatterUp.git
+
+# Access
+$ cd chatterUp
+
+# Install dependencies
+$ npm install
+
+# Run the project
+$ node index.js
+
+# The server will initialize in the <http://localhost:3000>
+```
+
+<a href="#top">Back to top</a>
