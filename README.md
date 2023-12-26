@@ -58,6 +58,7 @@ $ node index.js
 
 # The server will initialize in the <http://localhost:3000>
 ```
+## :open_file_folder: Starting ##
 ```bash
   .
   ├── public
