@@ -58,7 +58,7 @@ $ node index.js
 
 # The server will initialize in the <http://localhost:3000>
 ```
-
+```bash
   .
   ├── public
   └── public
@@ -91,7 +91,7 @@ $ node index.js
   │── package.lock.json
   │── package.json
   └── user.schema.js
-  
+```
 &#xa0;
 
 <a href="#top">Back to top</a>
