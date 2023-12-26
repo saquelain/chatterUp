@@ -24,9 +24,13 @@ https://github.com/saquelain/chatterUp/assets/54945131/9792c645-a315-4706-887b-6
 </a> &#xa0; &#xa0;
 
 <a href="#">
-  <img width="50" title="Javascript" alt="Javascript Logo" src="">
+  <img width="50" title="Javascript" alt="Javascript Logo" src="https://banner2.cleanpng.com/20180422/hrq/kisspng-javascript-web-development-logo-script-clipart-5adc4c1a932f97.7568863815243868426029.jpg">
 </a> &#xa0; &#xa0;
 
 <a href="https://www.mongodb.com/">
-  <img width="50" title="MongdoDB" alt="Mongo Logo" src="">
+  <img width="50" title="MongdoDB" alt="Mongo Logo" src="https://w7.pngwing.com/pngs/956/695/png-transparent-mongodb-original-wordmark-logo-icon-thumbnail.png">
+</a> &#xa0; &#xa0;
+
+<a href="https://socket.io/">
+  <img width="50" title="Socket.io" alt="Socket Logo" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/socketio_logo_icon_168806.png">
 </a> &#xa0; &#xa0;
