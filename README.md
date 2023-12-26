@@ -39,9 +39,7 @@ https://github.com/saquelain/chatterUp/assets/54945131/9792c645-a315-4706-887b-6
 
 ## :heavy_check_mark: Requirements ##
 
-<div>
-  Before starting :checkered_flag:, make sure you have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed on your system. ([npm](https://www.npmjs.com/) recommended).
-</div>
+Before starting :checkered_flag:, make sure you have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed on your system. ([npm](https://www.npmjs.com/) recommended).
 
 ## :checkered_flag: Starting ##
 
